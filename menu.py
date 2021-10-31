@@ -4,9 +4,19 @@ from tkinter import ttk
 import grille
 
 def afficher_menu(root):
+    """
+    Affichage des éléments du menu.
+
+    Génération d'une Frame principale contenant tous les éléments du menu.
+
+    Paramètres
+    ----------
+    root : tkinter.Tk
+        Classe Tkinter qui contiendra la Frame principale du menu.
+    """
     root.geometry("400x500")
 
-    frame = ttk.Frame(root)#padding=(10, 10, 12, 12))
+    frame = ttk.Frame(root, padding=(10, 10, 12, 12))
     frame.grid(column=0, row=0, sticky=(N, S, E, W))
 
     title = ttk.Label(frame, image=root.images["titre"])
@@ -27,6 +37,20 @@ def afficher_menu(root):
     frame.rowconfigure(1, weight=1)
 
 def clic_menu(root, menu, taille):
+    """
+    Action executée au clic sur l'un des boutons de jeu du menu.
+
+    Supprimme les éléments du menu et génère la grille de couleurs afin de l'afficher.
+
+    Parameters
+    ----------
+    root : tkinter.Tk
+        Classe Tkinter qui contiendra la grille de couleurs à afficher.
+    menu : tkinter.Frame
+        Frame qui contient les éléments du menu à supprimmer.
+    taille : int
+        Taille de la grille à générer.
+    """
     menu.destroy()
 
     root.geometry((f"{50*taille}x"*2)[:-1])
