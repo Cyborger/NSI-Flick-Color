@@ -1,5 +1,7 @@
 # NSI - Projet n°1 (Terminale)
 
+![Flick Color](https://user-images.githubusercontent.com/34278608/139579989-6d02c1bb-4ee5-4a51-93af-34833a135495.png)
+
 ## Description du jeu
 
 Faites s'étendre les couleurs, de manière à ce qu'il n'en reste plus qu'une seule à la fin du jeu. Le joueur doit remplir la grille d'une seule couleur en un minimum de coups.
@@ -32,7 +34,13 @@ def colorier(grille,i,j,couleur_initiale,couleur_finale):
 	"""
 ```
 
-Par exemple, `colorier(grille, 3, 1, "blue", "yellow")` donne,
+Par exemple, pour : 
+
+![Image 1](https://user-images.githubusercontent.com/34278608/139580100-270977c6-3e57-4029-baa7-4b5cdd611603.png)
+
+`colorier(grille, 3, 1, "blue", "yellow")` donne :
+
+![Image 2](https://user-images.githubusercontent.com/34278608/139580110-c713e6f0-7e32-4099-baff-fb64f6f6154b.png)
 
 - Votre code devra être structuré avec des fonctions de taille raisonnable.
 - Vous adopterez une approche modulaire (programme principal appelant des sous-programmes ou modules), et vous devrez notamment séparer la partie graphique de la partie fonctionnelle.
