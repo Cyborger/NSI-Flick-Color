@@ -35,25 +35,36 @@ C'est, en effet, dans cet optique de minimalisation que je me fixe notamment plu
 	\item adopter un programme sans restriction de système d'exploitation (explications évoqués ci-dessous, parmis les difficultés rencontrées).
 \end{itemize}
 
-Ainsi, je débute le projet par la partie de jeu sans même d'abord me soucier des menus en mettant en place les fonctions qui permettent la génération de la grille aléatoire (fonction \texttt{grille.generation\_couleurs}), l'affichage préliminaire d'un élément \texttt{tkinter.Canvas}, de la construction des différents rectangles sur celui-ci en fonction de la grille aléatoire (fonction \texttt{grille.generation\_rectangles}), puis de l'action au clic de ce même Canvas dans une fonction alors mince (fonction \texttt{grille.clic}) qui permet la liaison avec la fonction récursive (fonction \texttt{grille.colorier}) permettant donc de propager les couleurs sur la grille dîte fonctionnelle puis de mettre à jour l'élément Canvas en supprimant ses \textit{enfants}, autrement dit, les rectangles qui le composent puis de le récréer à l'appel de \texttt{grille.generation\_rectangles}.
+Ainsi, je débute le projet par la partie de jeu sans même d'abord me soucier des menus en mettant en place les fonctions qui permettent la génération de la grille aléatoire (fonction \texttt{grille.generation\_couleurs}), l'affichage préliminaire d'un élément \texttt{tkinter.Canvas}, de la construction des différents rectangles sur celui-ci en fonction de la grille aléatoire (fonction \texttt{grille.generation\_rectangles}), puis de l'action au clic de ce même Canvas dans une fonction alors mince (fonction \texttt{grille.clic}) qui permet la liaison avec la fonction récursive (fonction \texttt{grille.colorier}) permettant donc de propager les couleurs sur la grille dîte fonctionnelle puis de mettre à jour l'élément Canvas en supprimant ses \textit{enfants}, autrement dit, les rectangles qui le composent puis de les récréer à l'appel de \texttt{grille.generation\_rectangles}.
 
 Ensuite, lorsque le jeu se trouve dans un état fonctionnel, je décide de mettre en place les éléments plus complémentaires au programme comme les menus et le compteur de coups. C'est ainsi que je décide d'abord d'utiliser la méthode \texttt{grid} dans l'affichage des éléments Tkinter d'abord correctement mais menant, selon moi, à l'ajout de trop nombreuses instructions que je vais définir comme de bas niveau car nécessitant une attention toute particulière à la partie graphique du programme ne constituant pourtant pas la partie principale du projet. Je me retourne donc vers l'implémentation plus simple mais moins pratique proposée par \texttt{pack} qui ne me permet cependant pas autant de facilités pour le changement du style lié au placement des éléments graphiques, notamment pour les menus.
 
 Pour cependant tenter d'apporter un style original à mon \oe{}uvre, j'implémente un style Tkinter différent de celui par défaut, \href{https://github.com/MaxPerl/ttk-Breeze/tree/5872ff9bcec6aa7bcb9bd731422383a5d95f660d}{ttk-Breeze}. Je crée également un logo pour ce projet, sans pourtant l'implémenter pour la fenêtre miniaturisée proposée sous Windows dans sa barre des tâches, l'implémentation Tkinter sous Linux, sur lequel repose mon système principal, ne proposant pas cette fonction menant ainsi à des erreurs.
 
-\section{Arborescence du programme\footnote{Les éléments marqués par un astérix * peuvent apparaître sous la forme de multiples instances dans le programme.}}
+\section{Arborescence du programme}
+
+Les éléments marqués par un astérix * peuvent apparaître sous la forme de multiples instances dans le programme. \\
 
 \dirtree{%
 .1 root (\texttt{tkinter.Tk}).
 .2 menu (\texttt{tkinter.Frame}).
-.3 \texttt{tkinter.Label}*.
-.3 \texttt{tkinter.Button}*.
+.3 Fonction \texttt{afficher}.
+.4 \texttt{tkinter.Label}*.
+.4 \texttt{tkinter.Button}*.
+.3 Fonction \texttt{clic}.
 .2 jeu (\texttt{tkinter.Frame}).
-.3 canvas (\texttt{tkinter.Canvas}).
+.3 Fonction \texttt{afficher}.
+.4 canvas (\texttt{tkinter.Canvas}).
+.4 Fonction \texttt{colorier}.
+.4 Fonction \texttt{generation\_couleurs}.
+.4 Fonction \texttt{elements\_identiques}.
+.4 Fonction \texttt{clic}.
 .3 \texttt{tkinter.Label}.
 .2 fin (\texttt{tkinter.Frame}).
-.3 \texttt{tkinter.Label}*.
-.3 \texttt{tkinter.Button}*.
+.3 Fonction \texttt{afficher}.
+.4 \texttt{tkinter.Label}*.
+.4 \texttt{tkinter.Button}*.
+.3 Fonction \texttt{retour\_menu}.
 }
 
 \end{document}
